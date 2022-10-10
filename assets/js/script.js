@@ -37,20 +37,40 @@ function loadUserData() {
 // Launches welcome statement
 loadUserData();
 
+// Turns numeric values from dropdown input into words
+function dropdownTranslate() {
+    let storedTasks = JSON.parse(localStorage.getItem("Task"));
+
+    if (storedTasks.exp === 1) {
+        return "Easy";
+    } else if (storedTasks.exp === 2) {
+        return "Medium"; 
+    } else    {
+        return "Hard";
+        }
+};
+
+
 
 // TODO: Create a card for task(s)
 function createCard() {
+    let storedTasks = JSON.parse(localStorage.getItem("Task"));
+
     console.log("taskbutton clicked");
     let div = document.createElement("div");
     let h3 = document.createElement("h3");
+    let p = document.createElement("p");
+
 
 
     div.setAttribute("class", "task container z-depth-3");
-    h3.innerText = tas
-    
+    h3.innerText = storedTasks.taskName;
+    p.innerText= dropdownTranslate();
+        
     
     listedTasks.append(div);
-    
+    div.append(h3);
+    div.append(p);
 
 };
 
@@ -74,7 +94,7 @@ function toggleModal() {
 function createTask() {
 
     let taskDetails = {
-        taskName: document.querySelector(''),
+        taskName: document.querySelector('#taskName').value,
         exp: document.querySelector('#difficultySelect').value,
         subtasks: document.querySelector('#subtaskSelect').value
     };

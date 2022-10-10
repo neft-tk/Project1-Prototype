@@ -6,7 +6,6 @@
 
 .input-field {
     background-color: white !important;
-    padding-bottom:  !important;
 };
 
 /* label color */
@@ -40,4 +39,5 @@
 
 .task {
     border: 1px solid black;
+    background-color: burlywood !important;
 };
