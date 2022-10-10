@@ -38,7 +38,26 @@ function loadUserData() {
 loadUserData();
 
 // Turns numeric values from dropdown input into words
-function dropdownTranslate() {
+function dropdownTranslate2() {
+    let storedTasks = JSON.parse(localStorage.getItem("Task"));
+
+    let label = document.createElement("label");
+    let createInput = document.createElement("input");
+    createInput.setAttribute("type", "checkbox");
+    
+
+
+    if (storedTasks.subtasks === 1) {
+        return div.append(label), label.append(createInput);
+    } else if (storedTasks.subtasks === 2) {
+        return div.append(label), label.append(createInput), div.append(label), label.append(createInput);
+    } else if (storedTasks.subtasks === 3) {
+        return div.append(label), label.append(createInput), div.append(label), label.append(createInput), div.append(label), label.append(createInput);
+    };
+
+};
+
+function dropdownTranslate1() {
     let storedTasks = JSON.parse(localStorage.getItem("Task"));
 
     if (storedTasks.exp === 1) {
@@ -52,6 +71,8 @@ function dropdownTranslate() {
 
 
 
+
+
 // TODO: Create a card for task(s)
 function createCard() {
     let storedTasks = JSON.parse(localStorage.getItem("Task"));
@@ -60,17 +81,22 @@ function createCard() {
     let div = document.createElement("div");
     let h3 = document.createElement("h3");
     let p = document.createElement("p");
+    let label = document.createElement("label");
+    let createInput = document.createElement("input");
+    // let span = document.createElement("span");
 
-
-
-    div.setAttribute("class", "task container z-depth-3");
+    
+    div.setAttribute("class", "task container z-depth-3 p-2");
     h3.innerText = storedTasks.taskName;
-    p.innerText= dropdownTranslate();
-        
+    p.innerText= dropdownTranslate1();
+    createInput.setAttribute("type", "checkbox");
+           
     
     listedTasks.append(div);
     div.append(h3);
     div.append(p);
+    div.append(label);
+    label.append(createInput);
 
 };
 

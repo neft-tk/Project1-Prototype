@@ -40,4 +40,5 @@
 .task {
     border: 1px solid black;
     background-color: burlywood !important;
+    padding: 10px !important;
 };
