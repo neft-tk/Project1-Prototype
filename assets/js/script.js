@@ -69,22 +69,7 @@ function createTask() {
         subtasks: document.querySelector('#subtaskSelect').value
     };
 
-
-    // function getDifficultyOption() {
-    //     selectElement = document.querySelector('#difficultySelect');
-    //     output = selectElement.options[selectElement.selectedIndex].value;
-    //     taskDetails.exp.textContent = output;
-    // };
-
-    // function getSubTasksOption() {
-    //     selectElement = document.querySelector('#subtaskSelect');
-    //     output = selectElement.options[selectElement.selectedIndex].value;
-    //     taskDetails.subtasks.textContent = output;
-    // };
-
     localStorage.setItem("Task", JSON.stringify(taskDetails));
-
-    // getDifficultyOption();
-    // getSubTasksOption();   
+  
     console.log(taskDetails);
 };
